@@ -18,5 +18,11 @@ namespace JFluentValidation.Controllers
             return View(viewModel);
         }
 
+       [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult NotNull(string s)
+        {
+            var viewModel = new AuthenticationModel();
+            return View(viewModel);
+        }
     }
 }

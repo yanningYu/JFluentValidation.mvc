@@ -1,26 +1,35 @@
 ﻿@model JFluentValidation.Models.AuthenticationModel
 
-@{
-    ViewBag.Title = "NotNull";
-}
+
 <h2>Not Null</h2>
 @using (this.Html.BeginForm("NotNull", "JFluentValidation", FormMethod.Post))
 {
+     <div id="validationSummary">
+        @this.Html.ValidationSummary("Please fix the following problems:")
+    </div>
     <div>
         <label>Required?</label>
         @Html.CheckBox("isRequire")
     </div>
     <div>
-        <label>User Name:</label>@Html.TextBoxFor(a=>a.UserName)
+        <label>User Name:</label>@Html.TextBoxFor(a => a.UserName)
     </div>
     <div>
-        <label>Pass Word:</label> @Html.TextBoxFor(a=>a.Password)
+        <label>Password:</label> @Html.TextBoxFor(a => a.Password)
     </div>
     <div>
         <input type="button" name="submit" id="submit" value="submit"/>
     </div>
     <script language="javascript" type="text/javascript">
-        
+        $('document').ready(function () {
+            $('#UserName').notNull(true, "Please Input User Name");
+            $('#Password').notNull(true, "Please Input Password");
+        });
+        $('#submit').click(function () {
+            if($('form').valid()) {
+                
+            }
+        });
     </script>
 }
 
