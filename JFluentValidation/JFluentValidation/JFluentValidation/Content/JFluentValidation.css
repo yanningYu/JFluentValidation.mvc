@@ -1,0 +1,40 @@
+﻿.field-validation-error
+{
+    color: #ff0000;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.input-validation-error
+{
+    border: 1px solid #f00 !important;
+}
+.input-validation-valid
+{
+    /* Optional: you can set whatever style you want */
+}
+.field-validation-error
+{
+    color: #f00;
+}
+.field-validation-valid
+{
+    display: none;
+}
+#validationSummary {
+    
+}
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #f00;
+   
+}
+.validation-summary-valid
+{
+    display: none;
+}
