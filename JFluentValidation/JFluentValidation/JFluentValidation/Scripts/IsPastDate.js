@@ -1,7 +1,7 @@
 ﻿(function ($) {
-    $.fn.isPastDate = function (errorMsg) {
+    $.fn.IsPastDate = function (errorMsg) {
         if (this.valid()) {
-            jQuery.validator.addMethod("isPastDate", function (value, element, colName) {
+            jQuery.validator.addMethod("IsPastDate", function (value, element, colName) {
                 var selectedDate = Date.parse(element.value);
                 var now = new Date();
                 if (selectedDate < now) {
@@ -13,7 +13,7 @@
 
             this.each(function (index) {
                 $(this).rules('add', {
-                    isPastDate: errorMsg
+                    IsPastDate: errorMsg
                 });
             });
         }
