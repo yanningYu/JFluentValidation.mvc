@@ -1,12 +1,16 @@
 ﻿@model JFluentValidation.Models.AuthenticationModel
 <h2>
-    Not Null</h2>
-@using (this.Html.BeginForm("NotNull", "JFluentValidation", FormMethod.Post))
+    NotNullWithCondition</h2>
+@using (this.Html.BeginForm("NotNullWithCondition", "JFluentValidation", FormMethod.Post))
 {
     <div id="validationSummary">
         @this.Html.ValidationSummary("Please fix the following problems:")
     </div>
-   
+    <div>
+        <label>
+            Required?</label>
+        @Html.CheckBox("isRequire")
+    </div>
     <div>
         <label>
             User Name:</label>@Html.TextBoxFor(a => a.UserName)
@@ -21,8 +25,15 @@
     </div>
     <script language="javascript" type="text/javascript">
         $('document').ready(function () {
-            $('#UserName').NotNull("Please Input User Name");
-            $('#Password').NotNull("Please Input Password");
+            $('#UserName').NotNullWithCondition("Please Input User Name", $('[name="isRequire"]'), "click", function () {
+                var bl = $('[name="isRequire"]').is(':checked');
+                return bl;
+            });
+            $('#Password').NotNullWithCondition("Please Input Password", $('[name="isRequire"]'), "click", function () {
+                var bl = $('[name="isRequire"]').is(':checked');
+                return bl;
+            });
+
         });
         $('#submit').click(function () {
             if ($('form').valid()) {

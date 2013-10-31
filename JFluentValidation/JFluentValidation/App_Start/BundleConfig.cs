@@ -22,7 +22,7 @@ namespace JFluentValidation
                      "~/JFluentValidation/Scripts/formValidation.js",
                      "~/JFluentValidation/Scripts/isPastDate.js",
                      "~/JFluentValidation/Scripts/NotNull.js",
-                     "~/JFluentValidation/Scripts/WithMessage.js",
+                     "~/JFluentValidation/Scripts/NotNullWithCondition.js",
                      "~/JFluentValidation/Scripts/isDate.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
