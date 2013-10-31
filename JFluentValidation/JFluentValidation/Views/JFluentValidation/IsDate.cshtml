@@ -1,0 +1,33 @@
+﻿<h2>
+    IsDate</h2>
+@using (this.Html.BeginForm("IsDate", "JFluentValidation", FormMethod.Post))
+{
+    <div id="validationSummary">
+        @this.Html.ValidationSummary("Please fix the following problems:")
+    </div>
+   
+    <div>
+        <label>
+            DateTime:</label>@Html.TextBox("dateTime", "12/10/1988 09:10")
+    </div>
+    <div>
+        <label>
+            InValidDateTime:</label>
+        @Html.TextBox("invalidDateTime", "invalid Date Time")
+    </div>
+    <div>
+        <input type="button" name="submit" id="submit" value="submit" />
+    </div>
+    <script language="javascript" type="text/javascript">
+        $('document').ready(function () {
+            $('#dateTime').IsDate("Please Input right DateTime");
+            $('#invalidDateTime').IsDate("Please Input right DateTime");
+        });
+        $('#submit').click(function () {
+            if ($('form').valid()) {
+                alert("Form is validated successfully");
+                window.location = '@(Url.Action("Index", "Home"))';
+            }
+        });
+    </script>
+}

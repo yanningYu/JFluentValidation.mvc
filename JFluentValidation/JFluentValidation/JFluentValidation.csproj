@@ -136,7 +136,7 @@
     <Content Include="JFluentValidation\Content\JFluentValidation.css" />
     <Content Include="JFluentValidation\Scripts\NotNull.js" />
     <Content Include="JFluentValidation\Scripts\formValidation.js" />
-    <Content Include="JFluentValidation\Scripts\isDate.js" />
+    <Content Include="JFluentValidation\Scripts\IsDate.js" />
     <Content Include="JFluentValidation\Scripts\isPastDate.js" />
     <Content Include="JFluentValidation\Scripts\isValid.js" />
     <Content Include="JFluentValidation\Scripts\NotNullWithCondition.js" />
@@ -179,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\JFluentValidation\NotNullWithCondition.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\JFluentValidation\IsDate.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

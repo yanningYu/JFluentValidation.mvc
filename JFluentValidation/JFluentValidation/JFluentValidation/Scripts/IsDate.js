@@ -1,11 +1,11 @@
 ﻿(function ($) {
-    $.fn.isDateType = function (errorMsg) {
+    $.fn.IsDate = function (errorMsg) {
         if (this.valid()) {
-            jQuery.validator.addMethod("isDateType", function (value, element, colName) {
+            jQuery.validator.addMethod("IsDate", function (value, element, colName) {
                 if (element.value == null || element.value == '') {
                     return true;
                 }
-                if (Date.parse(element.value)!= null) {
+                if (!isNaN(Date.parse(element.value))) {
                     return true;
                 }
                 return false;
@@ -13,7 +13,7 @@
 
             this.each(function (index) {
                 $(this).rules('add', {
-                    isDateType: errorMsg
+                    IsDate: errorMsg
                 });
             });
         }

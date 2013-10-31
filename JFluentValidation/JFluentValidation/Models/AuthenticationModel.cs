@@ -8,6 +8,6 @@ namespace JFluentValidation.Models
 
         public string Password { get; set; }
 
-        public DateTime loginDateTime { get; set; }
+        public DateTime LoginDateTime { get; set; }
     }
 }
