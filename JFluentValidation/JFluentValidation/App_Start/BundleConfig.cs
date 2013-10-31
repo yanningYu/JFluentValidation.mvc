@@ -21,7 +21,8 @@ namespace JFluentValidation
             bundles.Add(new ScriptBundle("~/bundles/jfluentval").Include(
                      "~/JFluentValidation/Scripts/formValidation.js",
                      "~/JFluentValidation/Scripts/isPastDate.js",
-                     "~/JFluentValidation/Scripts/notNull.js",
+                     "~/JFluentValidation/Scripts/NotNull.js",
+                     "~/JFluentValidation/Scripts/WithMessage.js",
                      "~/JFluentValidation/Scripts/isDate.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

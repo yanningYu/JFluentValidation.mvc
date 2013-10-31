@@ -7,10 +7,7 @@
      <div id="validationSummary">
         @this.Html.ValidationSummary("Please fix the following problems:")
     </div>
-    <div>
-        <label>Required?</label>
-        @Html.CheckBox("isRequire")
-    </div>
+   
     <div>
         <label>User Name:</label>@Html.TextBoxFor(a => a.UserName)
     </div>
@@ -22,27 +19,30 @@
     </div>
     <script language="javascript" type="text/javascript">
         $('document').ready(function () {
-            $('#UserName').notNull("Please Input User Name", $('[name="isRequire"]'), "click", function () {
-                var bl = $('[name="isRequire"]').is(':checked');
-                debugger;
-                return bl;
-            });
-            $('#Password').notNull("Please Input Password", $('[name="isRequire"]'), "click", function () {
-                var bl = $('[name="isRequire"]').is(':checked');
-                return bl;
-            });
+            //            $('#UserName').notNull("Please Input User Name", $('[name="isRequire"]'), "click", function () {
+            //                var bl = $('[name="isRequire"]').is(':checked');
+            //                return bl;
+            //            });
+            //            $('#Password').notNull("Please Input Password", $('[name="isRequire"]'), "click", function () {
+            //                var bl = $('[name="isRequire"]').is(':checked');
+            //                return bl;
+            //            });
+
+            $('#UserName').NotNull("Please Input User Name");
+            $('#Password').NotNull("Please Input Password");
         });
         $('#submit').click(function () {
-//            if (bl == true) {
-              
-//            } else {
-//                $('#UserName').rules("remove", "required");
-//                $('#Password').rules("remove", "required");
-//            }
+            //            if (bl == true) {
 
-    
+            //            } else {
+            //                $('#UserName').rules("remove", "required");
+            //                $('#Password').rules("remove", "required");
+            //            }
+
+
             if ($('form').valid()) {
-                alert("validated");
+                alert("Form is validated successfully");
+                window.location = '@(Url.Action("Index","Home"))';
             }
         });
     </script>

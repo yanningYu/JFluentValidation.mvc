@@ -138,7 +138,7 @@
     <Content Include="JFluentValidation\Scripts\isDate.js" />
     <Content Include="JFluentValidation\Scripts\isPastDate.js" />
     <Content Include="JFluentValidation\Scripts\isValid.js" />
-    <Content Include="JFluentValidation\Scripts\notNull.js" />
+    <Content Include="JFluentValidation\Scripts\NotNull.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-1.9.1-vsdoc.js" />
     <Content Include="Scripts\jquery-migrate-1.2.1.js" />

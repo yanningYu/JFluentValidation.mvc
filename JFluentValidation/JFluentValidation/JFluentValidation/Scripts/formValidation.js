@@ -37,6 +37,9 @@ $('form').validate({
             $("#validationSummary div ul").removeAttr('style');
         }
     },
+    
+     
+      
     invalidHandler: function (event, validator) {
         var errors = validator.numberOfInvalids();
         if (errors) {
