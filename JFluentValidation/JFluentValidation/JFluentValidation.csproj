@@ -134,7 +134,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="JFluentValidation\Content\JFluentValidation.css" />
-    <Content Include="JFluentValidation\Scripts\NotNullss.js" />
+    <Content Include="JFluentValidation\Scripts\NotNull.js" />
     <Content Include="JFluentValidation\Scripts\formValidation.js" />
     <Content Include="JFluentValidation\Scripts\isDate.js" />
     <Content Include="JFluentValidation\Scripts\isPastDate.js" />
