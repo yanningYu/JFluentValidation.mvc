@@ -8,6 +8,7 @@ namespace JFluentValidation
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                "~/Scripts/date.js",
                 "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
@@ -21,7 +22,7 @@ namespace JFluentValidation
                 "~/JFluentValidation/Scripts/formValidation.js",
                 "~/JFluentValidation/Scripts/NotNull.js",
                 "~/JFluentValidation/Scripts/NotNullWithCondition.js",
-                "~/JFluentValidation/Scripts/isPastDate.js",
+                "~/JFluentValidation/Scripts/IsPastDate.js",
                 "~/JFluentValidation/Scripts/IsDate.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

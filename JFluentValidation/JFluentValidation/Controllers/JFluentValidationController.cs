@@ -25,5 +25,11 @@ namespace JFluentValidation.Controllers
             var viewModel = new AuthenticationModel();
             return View(viewModel);
         }
+
+        public ActionResult IsPastDate()
+        {
+            var viewModel = new AuthenticationModel();
+            return View(viewModel);
+        }
     }
 }

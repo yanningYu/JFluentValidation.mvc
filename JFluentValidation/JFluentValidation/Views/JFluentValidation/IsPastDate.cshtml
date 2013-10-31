@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "IsPastDate";
+}
+<h2>Is Past Date</h2>
+@using (this.Html.BeginForm("IsPastDate", "JFluentValidation", FormMethod.Post))
+{
+    <div id="validationSummary">
+        @this.Html.ValidationSummary("Please fix the following problems:")
+    </div>
+   
+    <div>
+        <label>
+            Future DateTime:</label><input type="text" name="futureDate" id="futureDate"/>
+    </div>
+    <div>
+        <label>
+            Past Date:</label>
+        @Html.TextBox("pastDateTime")
+    </div>
+    <div>
+        <input type="button" name="submit" id="submit" value="submit" />
+    </div>
+    <script language="javascript" type="text/javascript">
+        $('document').ready(function () {
+            var futureDateValue = Date.today().addDays(3).toString("MM/dd/yyyy");
+            var pastDateValue = Date.today().addDays(-3).toString("MM/dd/yyyy");
+            $('#futureDate').attr('value', futureDateValue);
+            $('#pastDateTime').attr('value', pastDateValue);
+            $('#pastDateTime').IsPastDate("Please Input past DateTime");
+            $('#futureDate').IsPastDate("Please Input past DateTime");
+        });
+        $('#submit').click(function () {
+            if ($('form').valid()) {
+                alert("Form is validated successfully");
+                window.location = '@(Url.Action("Index", "Home"))';
+            }
+        });
+    </script>
+}
