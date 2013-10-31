@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @*  @Scripts.Render("~/bundles/modernizr")*@
     @Scripts.Render("~/bundles/jquery")
-@*    @Scripts.Render("~/bundles/jqueryui")
-*@    @Scripts.Render("~/bundles/jqueryval")
+@*    <script src="@Url.Content("~/Scripts/jquery-migrate-1.2.1.min.js")" type="text/javascript"> </script>
+*@    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
 </head>
 <body>
     @RenderBody()
-
-    
     @Scripts.Render("~/bundles/jfluentval")
     @RenderSection("scripts", required: false)
 </body>
