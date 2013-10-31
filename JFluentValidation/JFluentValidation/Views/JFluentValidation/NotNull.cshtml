@@ -22,12 +22,27 @@
     </div>
     <script language="javascript" type="text/javascript">
         $('document').ready(function () {
-            $('#UserName').notNull(true, "Please Input User Name");
-            $('#Password').notNull(true, "Please Input Password");
+            $('#UserName').notNull("Please Input User Name", $('[name="isRequire"]'), "click", function () {
+                var bl = $('[name="isRequire"]').is(':checked');
+                debugger;
+                return bl;
+            });
+            $('#Password').notNull("Please Input Password", $('[name="isRequire"]'), "click", function () {
+                var bl = $('[name="isRequire"]').is(':checked');
+                return bl;
+            });
         });
         $('#submit').click(function () {
-            if($('form').valid()) {
-                
+//            if (bl == true) {
+              
+//            } else {
+//                $('#UserName').rules("remove", "required");
+//                $('#Password').rules("remove", "required");
+//            }
+
+    
+            if ($('form').valid()) {
+                alert("validated");
             }
         });
     </script>

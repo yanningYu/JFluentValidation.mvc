@@ -1,15 +1,43 @@
-﻿(function ($) {
-    $.fn.notNull = function (condition, errorMsg) {
-        if (this.valid()) {
-            this.each(function (index) {
-                $(this).rules('add', {
-                    required: condition,
-                    messages: {
-                        required: errorMsg
-                    }
+﻿//(function($) {
+//    $.fn.notNull = function(errorMsg) {
+//        if (this.valid()) {
+//            this.each(function(index) {
+//                $(this).rules('add', {
+//                    required: true,
+//                    messages: {
+//                        required: errorMsg
+//                    }
+//                });
+//            });
+//        }
+//        return this;
+//    };
+//}(jQuery));
+
+(function ($) {
+    $.fn.notNull = function (errorMsg, triggerSelector, triggerEvent, triggerfn) {
+        var selector = this;
+        triggerSelector.live(triggerEvent, function () {
+            alert(triggerfn);
+            if (triggerfn()) {
+                if (selector.valid()) {
+                    selector.each(function (index) {
+                        $(this).rules('add', {
+                            required: true,
+                            messages: {
+                                required: errorMsg
+                            }
+                        });
+                    });
+                }
+            } else {
+                selector.each(function (index) {
+                    $(this).rules("remove", "required");
                 });
-            });
-        }
+            }
+
+        });
+
         return this;
     };
 } (jQuery));
