@@ -7,7 +7,6 @@
                 if (selectedDate < now) {
                     return true;
                 }
-
                 return false;
             }, "{0}");
 
