@@ -19,6 +19,7 @@ namespace JFluentValidation
                 "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jfluentval").Include(
+                "~/JFluentValidation/Scripts/NotEqual.js",
                 "~/JFluentValidation/Scripts/formValidation.js",
                 "~/JFluentValidation/Scripts/NotNull.js",
                 "~/JFluentValidation/Scripts/NotNullWithCondition.js",

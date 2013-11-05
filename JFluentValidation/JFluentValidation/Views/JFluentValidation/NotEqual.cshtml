@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "NotEqual";
+}
+
+<h2>NotEqual</h2>
+
+@using (this.Html.BeginForm("NotNull", "JFluentValidation", FormMethod.Post))
+{
+    <div id="validationSummary">
+        @this.Html.ValidationSummary("Please fix the following problems:")
+    </div>
+   
+    <div>
+        <label>
+            Address1:</label>@Html.TextBox("address1")
+    </div>
+    <div>
+        <label>
+            Address2:</label>
+       @Html.TextBox("address2")
+    </div>
+    <div>
+        <input type="button" name="submit" id="submit" value="submit" />
+    </div>
+    <script language="javascript" type="text/javascript">
+        $('document').ready(function () {
+            $('#address2').NotEqual(function () { return $('#address1').val(); }, "Address2 can not equal to address1");
+        });
+        $('#submit').click(function () {
+            if ($('form').valid()) {
+                alert("Form is validated successfully");
+                window.location = '@(Url.Action("Index", "Home"))';
+            }
+        });
+    </script>
+}
+

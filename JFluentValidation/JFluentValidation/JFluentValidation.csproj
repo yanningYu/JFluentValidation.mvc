@@ -134,6 +134,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="JFluentValidation\Content\JFluentValidation.css" />
+    <Content Include="JFluentValidation\Scripts\NotEqual.js" />
     <Content Include="JFluentValidation\Scripts\NotNull.js" />
     <Content Include="JFluentValidation\Scripts\FormValidation.js" />
     <Content Include="JFluentValidation\Scripts\IsDate.js" />
@@ -185,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\JFluentValidation\IsPastDate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\JFluentValidation\NotEqual.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
