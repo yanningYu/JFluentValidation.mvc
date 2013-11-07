@@ -2,10 +2,9 @@
     $.fn.NotEqual = function (fn, errorMsg) {
         if (this.valid()) {
             jQuery.validator.addMethod("NotEqual", function (value, element, colName) {
-                if (element.value == fn()) {
+                if (element.value != fn()) {
                     return true;
                 }
-               
                 return false;
             }, "{0}");
 
