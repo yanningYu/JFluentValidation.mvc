@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "NotEquallWithCondition";
+}
+
+<h2>NotEquallWithCondition</h2>
+@using (this.Html.BeginForm("NotEquallWithCondition", "JFluentValidation", FormMethod.Post))
+{
+    <div id="validationSummary">
+        @this.Html.ValidationSummary("Please fix the following problems:")
+    </div>
+    <div>
+        <label>
+            Can be the same?</label>
+        @Html.CheckBox("isRequire")
+    </div>
+    <div>
+        <label>
+            Address1:</label>@Html.TextBox("address1")
+    </div>
+    <div>
+        <label>
+           Address2:</label>
+        @Html.TextBox("address2")
+    </div>
+    <div>
+        <input type="button" name="submit" id="submit" value="submit" />
+    </div>
+    <script language="javascript" type="text/javascript">
+        $('document').ready(function () {
+            $('#address2').NotEqual(function () { return $('#address1').val(); }, "Address2 can not equal to address1");
+
+            $('#address2').NotEqualWithCondition(function () { return $('#address1').val(); }, "Address2 can not equal to address1", $('[name="isRequire"]'), "click", function () {
+                var bl = $('[name="isRequire"]').is(':checked');
+                return !bl;
+            });
+
+        });
+        $('#submit').click(function () {
+            if ($('form').valid()) {
+                alert("Form is validated successfully");
+                window.location = '@(Url.Action("Index", "Home"))';
+            }
+        });
+    </script>
+}

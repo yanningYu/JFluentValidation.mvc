@@ -36,5 +36,10 @@ namespace JFluentValidation.Controllers
         {
             return View();
         }
+
+        public ActionResult NotEqualWithCondition()
+        {
+            return View();
+        }
     }
 }

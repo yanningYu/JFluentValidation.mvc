@@ -1,8 +1,8 @@
 ﻿(function ($) {
-    $.fn.NotEqual = function (fn, errorMsg) {
+    $.fn.NotEqual = function (fnComparedValue, errorMsg) {
         if (this.valid()) {
             jQuery.validator.addMethod("NotEqual", function (value, element, colName) {
-                if (element.value != fn()) {
+                if (element.value != fnComparedValue()) {
                     return true;
                 }
                 return false;

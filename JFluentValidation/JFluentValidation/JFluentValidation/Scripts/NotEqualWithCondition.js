@@ -1,11 +1,8 @@
 ﻿(function ($) {
-    $.fn.NotNullWithCondition = function (errorMsg, triggerSelector, triggerEvent, triggerfn) {
+    $.fn.NotEqualWithCondition = function (fnComparedValue, errorMsg, triggerSelector, triggerEvent, triggerfn) {
         var selector = this;
         jQuery.validator.addMethod("NotEqual", function (value, element, colName) {
-            if (element.value == null || element.value == '') {
-                return true;
-            }
-            if (!isNaN(Date.parse(element.value))) {
+            if (element.value != fnComparedValue()) {
                 return true;
             }
             return false;
@@ -16,16 +13,13 @@
                 if (selector.valid()) {
                     selector.each(function (index) {
                         $(this).rules('add', {
-                            required: true,
-                            messages: {
-                                required: errorMsg
-                            }
+                            NotEqual: errorMsg
                         });
                     });
                 }
             } else {
                 selector.each(function (index) {
-                    $(this).rules("remove", "required");
+                    $(this).rules("remove", "NotEqual");
                 });
             }
 
