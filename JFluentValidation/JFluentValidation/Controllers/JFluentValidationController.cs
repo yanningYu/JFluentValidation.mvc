@@ -41,5 +41,15 @@ namespace JFluentValidation.Controllers
         {
             return View();
         }
+
+        public ActionResult Equal()
+        {
+            return View();
+        }
+
+        public ActionResult EqualWithCondition()
+        {
+            return View();
+        }
     }
 }

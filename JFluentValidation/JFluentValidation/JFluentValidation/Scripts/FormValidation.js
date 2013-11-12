@@ -20,7 +20,7 @@ $('form').validate({
         errorElement.addClass(errorClass);
 
         if ($('.validation-summary-errors', errorElement.parent().parent().parent()).children().length == 0) {
-            $('.validation-summary-valid', errorElement.parent().parent().parent()).attr('class', 'validation-summary-errors');
+            $("#validationSummary div").attr('class', 'validation-summary-errors');
         }
     },
 

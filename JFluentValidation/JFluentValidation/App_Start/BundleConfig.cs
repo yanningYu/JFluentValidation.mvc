@@ -22,6 +22,8 @@ namespace JFluentValidation
                 "~/JFluentValidation/Scripts/NotEqual.js",
                  "~/JFluentValidation/Scripts/NotEqualWithCondition.js",
 
+                  "~/JFluentValidation/Scripts/Equal.js",
+
                 "~/JFluentValidation/Scripts/formValidation.js",
                 "~/JFluentValidation/Scripts/NotNull.js",
                 "~/JFluentValidation/Scripts/NotNullWithCondition.js",

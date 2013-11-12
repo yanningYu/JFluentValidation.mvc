@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "NotEqual";
+}
+
+<h2>NotEqual</h2>
+
+@using (this.Html.BeginForm("Equal", "JFluentValidation", FormMethod.Post))
+{
+    <div id="validationSummary">
+        @this.Html.ValidationSummary("Please fix the following problems:")
+    </div>
+   
+    <div>
+        <label>
+            Password:</label>@Html.TextBox("password")
+    </div>
+    <div>
+        <label>
+            Confirm Password:</label>
+       @Html.TextBox("confirmpassword")
+    </div>
+    <div>
+        <input type="button" name="submit" id="submit" value="submit" />
+    </div>
+    <script language="javascript" type="text/javascript">
+        $('document').ready(function () {
+            $('#confirmpassword').Equal(function () { return $('#password').val(); }, "the password and confirmation password do not match");
+        });
+        $('#submit').click(function () {
+            debugger;
+            if ($('form').valid()) {
+                alert("Form is validated successfully");
+                window.location = '@(Url.Action("Index", "Home"))';
+            }
+        });
+    </script>
+}
+

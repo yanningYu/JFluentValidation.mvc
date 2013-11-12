@@ -134,6 +134,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="JFluentValidation\Content\JFluentValidation.css" />
+    <Content Include="JFluentValidation\Scripts\Equal.js" />
     <Content Include="JFluentValidation\Scripts\NotEqualWithCondition.js" />
     <Content Include="JFluentValidation\Scripts\NotEqual.js" />
     <Content Include="JFluentValidation\Scripts\NotNull.js" />
@@ -193,6 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\JFluentValidation\NotEqualWithCondition.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\JFluentValidation\Equal.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
